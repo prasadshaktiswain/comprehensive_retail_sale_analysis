@@ -1,0 +1,108 @@
+Analysis Process Documentation:-
+
+Analyze retail sales data to derive insights, customer behavior, popular products, sales trends, descriptive statistics, data visualization, and customer segmentation to enhance business decision-making and strategy development.
+
+Tools and Libraries Used:
+Pandas: for data manipulation and analysis.
+Matplotlib: for data visualization.
+Seaborn: for enhanced data visualization.
+NumPy: for numerical computations. 
+
+Working principle:-
+Reading Data:
+The script starts by importing the necessary libraries: pandas, matplotlib, seaborn, and numpy.
+It defines a function read_data(path) to read a CSV file located at the specified path and returns a pandas DataFrame.
+Data Cleaning:
+The data_cleaning(df) function is defined to perform data cleaning operations on the DataFrame.
+It drops rows with all missing values (NaN) and removes duplicate rows.
+It drops the 'Discount' column from the DataFrame.
+It strips leading and trailing whitespaces from string columns.
+The cleaned DataFrame is returned.
+Descriptive Statistics:
+The descriptive_stats(df) function calculates total sales and average order value from the DataFrame.
+Total sales are computed as the sum of the 'Sales' column.
+Average order value is computed as the mean of the 'Sales' column.
+The total sales and average order value are returned.
+Visualizing Descriptive Statistics:
+The vizualize_descriptive_stats(df) function visualizes the distribution of sales and order quantity using histograms and a boxplot.
+It uses seaborn and matplotlib for plotting.
+Histograms show the distribution of 'Sales' and 'Quantity' columns.
+A boxplot shows the distribution of 'Sales' values.
+Customer Segmentation:
+The customer_segmentation(df) function segments customers based on their total sales and number of purchases.
+It groups the DataFrame by customer index and aggregates total sales and number of purchases.
+Customers are segmented into four groups ('Low', 'Medium', 'High', 'Very High') based on quartiles of total sales and purchases.
+The segmented customer data is returned.
+Customer Segmentation Analysis:
+The customer_segmentation_analysis(customer_data) function analyzes customer segmentation by computing statistics for each segment.
+It groups the customer data by sales and purchases segments and computes descriptive statistics.
+The statistics include count, mean, standard deviation, minimum, quartiles, and maximum values for total sales and number of purchases in each segment.
+Top Selling Products and Categories:
+The top_selling_products(df) function identifies and prints the top selling products and categories based on sales volume.
+It groups the DataFrame by 'Sub-Category' and 'Category' columns and sums the 'Sales' values.
+The top selling products and categories are printed.
+Visualizing Data:
+The vizualization(df) function creates visualizations to explore the data further.
+It plots a bar chart showing total sales by category, a histogram of order values, and a heatmap of numerical variable correlations.
+Execution:
+The script reads data from a CSV file named "SampleSuperstore.csv".
+It performs data cleaning, computes descriptive statistics, visualizes data distributions, segments customers, analyzes customer segments, identifies top selling products and categories, and creates visualizations.
+The results are printed and visualized to gain insights into sales data from the sample superstore.
+
+Insights:-
+
+Sum_of_sales: 2296195.5903,
+average_order_value: 230.14890150345792
+
+customer_segmentation:-
+   TotalSales  NumPurchases SalesSegment PurchasesSegment
+0    261.9600             1    Very High              Low
+1    731.9400             1    Very High              Low
+2     14.6200             1          Low              Low
+3    957.5775             1    Very High              Low
+4     22.3680             1       Medium              Low
+
+customer_segmentation_analysis:-
+Sales Segment Stats:
+              TotalSales                                                                           NumPurchases                                   
+                  count        mean          std      min       25%      50%       75%        max        count mean  std  min  25%  50%  75%  max
+SalesSegment                                                                                                                                     
+Low              2495.0    9.325338     4.371905    0.444    5.7150    9.296   12.9600     17.300       2495.0  1.0  0.0  1.0  1.0  1.0  1.0  1.0
+Medium           2496.0   32.189140    10.458553   17.310   22.9600   30.980   40.2925     54.816       2496.0  1.0  0.0  1.0  1.0  1.0  1.0  1.0
+High             2494.0  112.877980    44.647201   54.896   73.5720  101.974  146.8200    209.970       2494.0  1.0  0.0  1.0  1.0  1.0  1.0  1.0
+Very High        2492.0  766.880858  1079.717579  209.979  303.6925  477.195  836.8440  22638.480       2492.0  1.0  0.0  1.0  1.0  1.0  1.0  1.0
+Purchases Segment Stats:
+                  TotalSales                                                                NumPurchases                                   
+                      count        mean         std    min   25%     50%     75%       max        count mean  std  min  25%  50%  75%  max
+PurchasesSegment                                                                                                                          
+Low                  9977.0  230.148902  623.721409  0.444  17.3  54.816  209.97  22638.48       9977.0  1.0  0.0  1.0  1.0  1.0  1.0  1.0
+
+top_selling_products and top_categories:-
+Top selling products:
+ Sub-Category
+Phones     330007.054
+Chairs     327777.761
+Storage    223843.608
+Tables     206965.532
+Binders    203409.169
+Name: Sales, dtype: float64
+Top selling categories:
+ Category
+Technology         836154.0330
+Furniture          741306.3133
+Office Supplies    718735.2440
+Name: Sales, dtype: float64
+
+Recommendations:-
+Target High-Value Customers:
+Focus marketing efforts on customers in the "Very High" sales segment to maximize revenue.
+Optimize Product Offerings:
+Analyze top-selling products and categories to understand customer preferences and tailor product offerings accordingly.
+Promotional Strategies:
+Utilize insights from customer segmentation to design targeted promotional strategies, such as offering discounts or promotions to customers in the "Medium" and "High" sales segments.
+Improve Inventory Management:
+Use sales data to optimize inventory management by stocking high-demand products and reducing stock of low-performing items.
+Enhance Customer Experience:
+Leverage customer segmentation insights to personalize the shopping experience and provide tailored recommendations or incentives based on customer purchasing behavior.
+Monitor Sales Trends:
+Continuously monitor sales trends, particularly for top-selling products and categories, to identify any shifts in customer preferences or market dynamics.
