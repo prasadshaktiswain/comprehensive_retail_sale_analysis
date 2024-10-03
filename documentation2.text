@@ -1,8 +1,0 @@
-Analyze retail sales data to derive insights, customer behavior, popular products, sales trends, descriptive statistics, data visualization, and customer segmentation to enhance business decision-making and strategy development.
-
-Weather Forecast Data Pipeline
-API: Extract real-time and historical weather forecast data from the OpenWeatherMap API.
-Processing: Use PySpark to process and aggregate weather data, such as temperature, humidity, wind speed, and weather conditions across multiple cities.
-Analysis: Use Pandas and NumPy to calculate daily averages, and temperature trends, or correlate weather patterns with other factors.
-Storage: Store the data in SQLite or MySQL for future queries and reporting.
-Visualization: Use Matplotlib to visualize weather trends (e.g., temperature and humidity over time, comparison between cities) through line graphs or scatter plots.
