@@ -84,7 +84,7 @@ def vizualization(df):
     plt.title('Correlation Matrix of Numerical Variables')
     plt.show()
 
-path="/home/shakti/Desktop/project2/retail_sale_analysis/SampleSuperstore.csv"
+path="comprehensive_retail_sale_analysis/SampleSuperstore.csv"
 df=read_data(path)
 df=data_cleaning(df)
 total_sales, average_order_value = descriptive_stats(df)
